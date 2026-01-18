@@ -2,11 +2,12 @@ services:
   - type: web
     name: desi-judgement-server
     env: node
-    buildCommand: npm run build
+    plan: free
+    region: oregon
+    buildCommand: npm install && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 10000
+      # PORT is automatically set by Render
 

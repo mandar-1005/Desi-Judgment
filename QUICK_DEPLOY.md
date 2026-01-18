@@ -4,41 +4,40 @@ Your app is now on GitHub: https://github.com/mandar-1005/Desi-Judgment
 
 ## 🚀 Deployment Steps
 
-### Step 1: Deploy Backend to Railway (5 minutes)
+### Step 1: Deploy Backend to Render (Free Tier - 5 minutes)
 
-1. **Sign up/Login to Railway**
-   - Go to [railway.app](https://railway.app)
-   - Sign up with your GitHub account (easiest)
+1. **Sign up/Login to Render**
+   - Go to [render.com](https://render.com)
+   - Click "Get Started for Free"
+   - Sign up with GitHub (easiest)
 
-2. **Create New Project**
-   - Click "New Project"
-   - Select "Deploy from GitHub repo"
-   - Authorize Railway to access your GitHub
-   - Select repository: `mandar-1005/Desi-Judgment`
+2. **Create Web Service**
+   - Click "New +" → "Web Service"
+   - Select "Build and deploy from a Git repository"
+   - Connect GitHub and select repository: `mandar-1005/Desi-Judgment`
 
 3. **Configure Backend Service**
-   - Railway will detect the repo
-   - Click "Add Service" → "GitHub Repo"
-   - Select your repo
-   - In settings, set **Root Directory** to: `server`
-   - Railway will auto-detect Node.js
+   - **Name**: `desi-judgement-server`
+   - **Region**: Choose closest (e.g., Oregon)
+   - **Branch**: `main`
+   - **Root Directory**: `server` ⚠️ **IMPORTANT!**
+   - **Runtime**: `Node`
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm start`
+   - **Plan**: **Free**
 
-4. **Deploy**
-   - Railway will automatically:
-     - Run `npm install`
-     - Run `npm run build`
-     - Run `npm start`
-   - Wait for deployment to complete (2-3 minutes)
+4. **Environment Variables**
+   - Click "Advanced"
+   - Add: `NODE_ENV` = `production`
+   - Add: `ALLOWED_ORIGINS` = (leave empty for now, update after frontend deploy)
 
-5. **Get Your Backend URL**
-   - Click on your service
-   - Go to "Settings" → "Domains"
-   - Railway will generate a URL like: `https://your-app-name.up.railway.app`
-   - **Copy this URL** - you'll need it for the frontend!
+5. **Deploy**
+   - Click "Create Web Service"
+   - Wait for deployment (3-5 minutes)
+   - You'll get a URL like: `https://desi-judgement-server.onrender.com`
+   - **Copy this URL** for the frontend!
 
-6. **Set Environment Variables (Optional)**
-   - Go to "Variables" tab
-   - Add: `ALLOWED_ORIGINS` = `https://your-vercel-app.vercel.app` (we'll update this after frontend deploy)
+**Note**: Free tier spins down after 15 min inactivity - first request may take 30-60 seconds to wake up
 
 ### Step 2: Deploy Frontend to Vercel (5 minutes)
 
@@ -74,15 +73,12 @@ Your app is now on GitHub: https://github.com/mandar-1005/Desi-Judgment
 
 ### Step 3: Update Backend CORS (2 minutes)
 
-1. **Go back to Railway**
+1. **Go back to Render**
    - Open your backend service
-   - Go to "Variables" tab
-   - Add/Update: `ALLOWED_ORIGINS` = `https://your-vercel-app.vercel.app` (your actual Vercel URL)
-   - Railway will automatically redeploy
-
-2. **Alternative: Update in Code** (if environment variable doesn't work)
-   - The code already supports `ALLOWED_ORIGINS` env var
-   - If needed, we can update `server/src/index.ts` directly
+   - Go to "Environment" tab
+   - Update: `ALLOWED_ORIGINS` = `https://your-vercel-app.vercel.app` (your actual Vercel URL)
+   - Click "Save Changes"
+   - Render will automatically redeploy (2-3 minutes)
 
 ### Step 4: Test! 🎮
 
@@ -112,7 +108,15 @@ Your app is now on GitHub: https://github.com/mandar-1005/Desi-Judgment
 
 After deployment, you'll have:
 - **Frontend**: `https://your-app.vercel.app`
-- **Backend**: `https://your-app.railway.app`
+- **Backend**: `https://your-app.onrender.com`
 
 Share the frontend URL with your friends to test!
+
+## 🆓 Free Tier Notes
+
+- **Render**: Free forever, but spins down after 15 min inactivity (wakes up automatically)
+- **Vercel**: Free forever, no spin-down issues
+- Perfect for testing with friends!
+
+**For detailed Render deployment instructions, see [RENDER_DEPLOY.md](./RENDER_DEPLOY.md)**
 
