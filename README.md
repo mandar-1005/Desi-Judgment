@@ -26,11 +26,13 @@ npm run dev
 
 Open http://localhost:3000 to play.
 
-## Deployment
+## Deployment (Free Tier)
 
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+See [RENDER_DEPLOY.md](./RENDER_DEPLOY.md) for detailed step-by-step instructions or [QUICK_DEPLOY.md](./QUICK_DEPLOY.md) for a quick guide.
 
-### Quick Deploy
+### Quick Deploy (Free Tier)
 
-1. **Backend (Railway/Render)**: Deploy the `server` folder
-2. **Frontend (Vercel)**: Deploy the `client` folder with `NEXT_PUBLIC_SERVER_URL` environment variable
+1. **Backend (Render Free)**: Deploy the `server` folder to [render.com](https://render.com)
+2. **Frontend (Vercel Free)**: Deploy the `client` folder to [vercel.com](https://vercel.com) with `NEXT_PUBLIC_SERVER_URL` environment variable
+
+Both platforms offer free tiers perfect for testing with friends! 🎉

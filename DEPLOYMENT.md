@@ -4,8 +4,10 @@ This guide explains how to deploy Desi Judgement to production.
 
 ## Architecture
 
-- **Frontend**: Next.js app deployed on Vercel
-- **Backend**: Express + Socket.io server deployed on Railway/Render/Fly.io
+- **Frontend**: Next.js app deployed on Vercel (Free tier)
+- **Backend**: Express + Socket.io server deployed on Render (Free tier)
+
+**Note**: Both platforms offer free tiers perfect for testing with friends!
 
 ## Deployment Steps
 
@@ -13,18 +15,19 @@ This guide explains how to deploy Desi Judgement to production.
 
 The backend needs to be deployed to a service that supports Node.js and WebSockets (Socket.io).
 
-**Recommended platforms:**
-- Railway (easiest)
-- Render
-- Fly.io
+**Recommended platform: Render (Free Tier)**
 
-**Steps for Railway:**
-1. Create a Railway account
-2. Create a new project
-3. Connect your GitHub repository
-4. Select the `server` folder as the root
-5. Railway will auto-detect Node.js and deploy
-6. Copy the deployed URL (e.g., `https://your-app.railway.app`)
+**Steps for Render:**
+1. Create a Render account (free tier available)
+2. Create a new Web Service
+3. Connect your GitHub repository (`mandar-1005/Desi-Judgment`)
+4. Set Root Directory to `server`
+5. Set Build Command: `npm install && npm run build`
+6. Set Start Command: `npm start`
+7. Select Free plan
+8. Deploy and copy the URL (e.g., `https://your-app.onrender.com`)
+
+**Note**: Free tier spins down after 15 min inactivity but wakes up automatically
 
 **Environment Variables:**
 - `PORT`: Automatically set by Railway (usually 3001 or 443)
