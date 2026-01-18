@@ -25,3 +25,12 @@ npm run dev
 ```
 
 Open http://localhost:3000 to play.
+
+## Deployment
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+
+### Quick Deploy
+
+1. **Backend (Railway/Render)**: Deploy the `server` folder
+2. **Frontend (Vercel)**: Deploy the `client` folder with `NEXT_PUBLIC_SERVER_URL` environment variable
